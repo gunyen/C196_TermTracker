@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:title="Drop Course"
+            android:id="@+id/dropCourse"
+    />
+    <item
+            android:title="Edit Course Details"
+            android:id="@+id/editCourseDetails"
+    />
+    <item
+            android:title="Share Course Notes"
+            android:id="@+id/shareCourseNotes"
+    />
+    <item
+            android:title="View Assessment List"
+            android:id="@+id/viewAssessmentList"
+    />
+</menu>

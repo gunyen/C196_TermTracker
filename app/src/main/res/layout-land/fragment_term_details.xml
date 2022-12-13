@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" xmlns:app="http://schemas.android.com/apk/res-auto"
+                tools:context=".UI.FragmentTermDetails">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="409dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+        <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:useDefaultMargins="true"
+                android:columnCount="3">
+            <TextView
+                    android:text="Term Name: "
+                    android:layout_column="1"
+                    android:layout_gravity="end"
+            />
+            <TextView
+                    android:text="untitled"
+                    android:id="@+id/tName"
+                    android:layout_gravity="fill_horizontal"
+            />
+            <TextView
+                    android:text="Start Date: "
+                    android:layout_column="1"
+                    android:layout_gravity="end"
+            />
+            <TextView
+                    android:id="@+id/tStart"
+                    android:text="mm/dd/yy"
+                    android:layout_gravity="fill_horizontal"
+            />
+            <TextView
+                    android:text="End Date: "
+                    android:layout_column="1"
+                    android:layout_gravity="end"
+            />
+            <TextView
+                    android:id="@+id/tEnd"
+                    android:text="mm/dd/yy"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_column="2"
+            />
+        </GridLayout>
+    </ScrollView>
+
+</RelativeLayout>

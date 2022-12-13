@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UI.TermDetails">
+    <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="409dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" android:layout_marginLeft="170dp"
+            android:layout_marginTop="90dp">
+        <FrameLayout
+                android:layout_width="413dp"
+                android:layout_height="411dp"
+                android:id="@+id/framelayout"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+        >
+            <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:useDefaultMargins="true"
+                    android:columnCount="3">
+                <TextView
+                        android:text="Term Name: "
+                        android:layout_column="1"
+                        android:layout_gravity="end"
+                />
+                <EditText
+                        android:id="@+id/editTermName"
+                        android:hint="enter term name"
+                        android:layout_gravity="fill_horizontal"
+                />
+                <TextView
+                        android:text="Start Date: "
+                        android:layout_column="1"
+                        android:layout_gravity="end"
+                />
+                <EditText
+                        android:id="@+id/editTermStart"
+                        android:hint="mm/dd/yy"
+                        android:layout_gravity="fill_horizontal"
+                />
+                <TextView
+                        android:text="End Date: "
+                        android:layout_column="1"
+                        android:layout_gravity="end"
+                />
+                <EditText
+                        android:id="@+id/editTermEnd"
+                        android:hint="mm/dd/yy"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_column="2"
+                />
+
+                <Button
+                        android:text="Save"
+                        android:layout_column="2"
+                        android:layout_gravity="start"
+                        android:id="@+id/saveTermButton"
+                        android:clickable="true"
+                        android:onClick="saveTerm"
+                />
+            </GridLayout>
+        </FrameLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
