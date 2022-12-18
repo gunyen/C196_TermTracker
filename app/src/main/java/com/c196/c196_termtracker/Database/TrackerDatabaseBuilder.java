@@ -11,7 +11,7 @@ import com.c196.c196_termtracker.Entity.Assessment;
 import com.c196.c196_termtracker.Entity.Course;
 import com.c196.c196_termtracker.Entity.Term;
 
-@Database(entities = {Term.class, Course.class, Assessment.class}, version = 6, exportSchema = false)
+@Database(entities = {Term.class, Course.class, Assessment.class}, version = 7, exportSchema = false)
 public abstract class TrackerDatabaseBuilder extends RoomDatabase {
     public abstract TermDAO termDAO();
     public abstract CourseDAO courseDAO();

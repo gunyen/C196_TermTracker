@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AssessmentList extends AppCompatActivity {
-    int transfer;
+    int transferCourse;
     TextView textCourseName;
     String courseName;
 
@@ -28,19 +28,20 @@ public class AssessmentList extends AppCompatActivity {
         setContentView(R.layout.activity_assessment_list);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        transfer = getIntent().getIntExtra("courseItemID", transfer);
+        transferCourse = getIntent().getIntExtra("courseItemID", transferCourse);
         courseName = getIntent().getStringExtra("courseName");
         // Display Database Info
         RecyclerView recyclerView = findViewById(R.id.assessmentRecyclerView);
         Repository repo = new Repository(getApplication());
         List<Assessment> assessments = new ArrayList<>();
         for (Assessment assessment : repo.getAllAssessments()) {
-            if (assessment.getAssessmentID() == transfer) assessments.add(assessment);
+            if (assessment.getCourseItemID() == transferCourse) assessments.add(assessment);
         }
         final AssessmentAdapter adapter = new AssessmentAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter.setAssessment(assessments);
+        //Display name of course the assessments are under
         textCourseName = findViewById(R.id.courseItemName);
         textCourseName.setText(courseName);
     }
@@ -61,9 +62,9 @@ public class AssessmentList extends AppCompatActivity {
                 startActivity(getIntent());
                 return true;
             case R.id.addNewAssessment:
-                transfer = getIntent().getIntExtra("courseItemID", transfer);
+                transferCourse = getIntent().getIntExtra("courseItemID", transferCourse);
                 Intent addAssessmentListIntent = new Intent(AssessmentList.this, AssessmentDetails.class);
-                addAssessmentListIntent.putExtra("courseItemID", transfer);
+                addAssessmentListIntent.putExtra("courseItemID", transferCourse);
                 startActivity(addAssessmentListIntent);
                 return true;
         }

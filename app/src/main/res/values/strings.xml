@@ -9,6 +9,10 @@
         <item>dropped</item>
         <item>plan to take</item>
     </string-array>
+    <string-array name="typeArray">
+        <item>performance</item>
+        <item>objective</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

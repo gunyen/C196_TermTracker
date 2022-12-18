@@ -38,6 +38,14 @@
                         android:layout_gravity="fill_horizontal"
                 />
                 <TextView
+                    android:text="Assessment Type: "
+                    android:layout_column="1"
+                    android:layout_gravity="end|center_vertical"
+                />
+                <Spinner
+                        android:id="@+id/editAssessmentType"
+                        android:layout_gravity="fill_horizontal"/>
+                <TextView
                         android:text="End Date : "
                         android:layout_column="1"
                         android:layout_gravity="end|center_vertical"
@@ -53,12 +61,6 @@
                             android:id="@+id/editAssessmentEnd"
                             android:hint="mm/dd/yy"
                     />
-                    <androidx.appcompat.widget.SwitchCompat
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="false"
-                            android:id="@+id/alertAssessmentEnd"
-                            android:text="Alert"/>
                 </LinearLayout>
                 <Button
                         android:text="Save"

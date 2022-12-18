@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.c196.c196_termtracker.R;
+import org.w3c.dom.Text;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -70,8 +71,8 @@ public class FragmentAssessmentDetails extends Fragment {
     }
 
     String sAName;
+    String sAType;
     String sAEnd;
-    SwitchCompat endSwitch;
     String myFormat = "MM/dd/yy";
     SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
@@ -81,12 +82,15 @@ public class FragmentAssessmentDetails extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_assessment_details, container, false);
         TextView aName = view.findViewById(R.id.eAssessmentName);
+        TextView aType = view.findViewById(R.id.eAssessmentType);
         TextView aEnd = view.findViewById(R.id.eAssessmentEnd);
         aName.setText(this.getArguments().getString("aName"));
+        aType.setText(this.getArguments().getString("aType"));
         aEnd.setText(this.getArguments().getString("aEnd"));
         sAName = aName.getText().toString();
+        sAType = aType.getText().toString();
         sAEnd = aEnd.getText().toString();
-
+        SwitchCompat endSwitch = view.findViewById(R.id.alertAssessmentEnd);
         SharedPreferences assessmentEndPreferences = getActivity().getSharedPreferences(sAName, MODE_PRIVATE);
         endSwitch.setChecked(assessmentEndPreferences.getBoolean("value", false));
         endSwitch.setOnClickListener(new View.OnClickListener() {

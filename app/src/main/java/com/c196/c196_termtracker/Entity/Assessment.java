@@ -9,12 +9,16 @@ public class Assessment {
     private int assessmentID;
     private int courseItemID;
     private String assessmentName;
+    private int typeID;
+    private String type;
     private String endDate;
 
-    public Assessment(int assessmentID, String assessmentName, String endDate, int courseItemID) {
+    public Assessment(int assessmentID, String assessmentName, int typeID, String type, String endDate, int courseItemID) {
         this.assessmentID = assessmentID;
         this.courseItemID = courseItemID;
         this.assessmentName = assessmentName;
+        this.typeID = typeID;
+        this.type = type;
         this.endDate = endDate;
     }
 
@@ -50,12 +54,30 @@ public class Assessment {
         this.endDate = endDate;
     }
 
+    public int getTypeID() {
+        return typeID;
+    }
+
+    public void setTypeID(int typeID) {
+        this.typeID = typeID;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "assessment{" +
                 "assessmentID=" + assessmentID +
                 ", courseItemID='" + courseItemID + '\'' +
                 ", assessmentName='" + assessmentName + '\'' +
+                ", typeID='" + typeID + '\'' +
+                ", type='" + type + '\'' +
                 ", endDate='" + endDate + '\'' +
                 '}';
     }
